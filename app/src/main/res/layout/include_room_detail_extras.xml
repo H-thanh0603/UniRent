@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingBottom="100dp">
+
+    <TextView
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Chi phí khác"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="6dp">
+        <TextView
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Điện:"
+            android:textColor="@color/text_secondary"/>
+        <TextView
+            android:id="@+id/tv_electric"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/text_primary" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="4dp">
+        <TextView
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Nước:"
+            android:textColor="@color/text_secondary"/>
+        <TextView
+            android:id="@+id/tv_water"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/text_primary" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Quy định"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_rules"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/text_primary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_report"
+        style="@style/UniRent.Button.Outline"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/error"
+        android:text="🚩 Báo cáo phòng vi phạm"/>
+</LinearLayout>

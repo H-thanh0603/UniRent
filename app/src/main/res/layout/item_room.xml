@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/UniRent.Card"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+    android:layout_marginTop="8dp" android:foreground="?selectableItemBackground"
+    android:clickable="true" android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="120dp" android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/placeholder_room"
+            android:src="@drawable/placeholder_room"/>
+
+        <LinearLayout
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold" android:textSize="15sp"
+                android:maxLines="2" android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:maxLines="1" android:ellipsize="end"/>
+
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="4dp">
+                <TextView
+                    android:id="@+id/tv_area"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary" android:textSize="11sp"/>
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text=" • "
+                    android:textColor="@color/text_secondary"/>
+                <TextView
+                    android:id="@+id/tv_distance"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary" android:textSize="11sp"/>
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text=" • "
+                    android:textColor="@color/text_secondary"/>
+                <TextView
+                    android:id="@+id/tv_rating"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="@color/rating_star" android:textSize="11sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="6dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:background="@drawable/bg_chip_green"
+                    android:textColor="@color/badge_green_text"
+                    android:paddingStart="10dp" android:paddingEnd="10dp"
+                    android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

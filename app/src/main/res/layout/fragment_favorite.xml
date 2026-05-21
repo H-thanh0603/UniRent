@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/background">
+
+    <TextView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="16dp" android:text="Phòng đã lưu"
+        android:textSize="22sp" android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:background="@color/surface"/>
+
+    <TextView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="12dp" android:textColor="@color/text_secondary"
+        android:text="💡 Giữ lâu một item để chọn so sánh."
+        android:textSize="13sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:padding="8dp" android:clipToPadding="false"/>
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center" android:padding="32dp"
+        android:text="❤ Chưa có phòng nào được lưu."
+        android:textColor="@color/text_secondary"
+        android:visibility="gone"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_compare"
+        style="@style/UniRent.Button.Primary"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="So sánh các phòng đã chọn"/>
+</LinearLayout>

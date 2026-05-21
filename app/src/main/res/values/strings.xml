@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UniRent</string>
+    <string name="app_tagline">Tìm phòng trọ thông minh cho sinh viên</string>
+
+    <!-- Auth -->
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng ký</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="full_name">Họ và tên</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="school_name">Tên trường</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="dont_have_account">Chưa có tài khoản? Đăng ký</string>
+    <string name="already_have_account">Đã có tài khoản? Đăng nhập</string>
+    <string name="role_student">Sinh viên</string>
+    <string name="role_landlord">Chủ trọ</string>
+
+    <!-- Home -->
+    <string name="hello_user">Xin chào, %1$s!</string>
+    <string name="search_hint">Tìm phòng theo khu vực, trường…</string>
+    <string name="ai_suggestion">Gợi ý AI cho bạn</string>
+    <string name="rooms_near_school">Phòng gần trường</string>
+    <string name="best_price">Phòng giá tốt</string>
+    <string name="newest_rooms">Phòng mới đăng</string>
+    <string name="top_rated">Được đánh giá cao</string>
+    <string name="banner_warning">⚠ Hãy kiểm tra hợp đồng kỹ trước khi đặt cọc.</string>
+
+    <!-- Tabs -->
+    <string name="tab_home">Trang chủ</string>
+    <string name="tab_search">Tìm kiếm</string>
+    <string name="tab_map">Bản đồ</string>
+    <string name="tab_favorite">Yêu thích</string>
+    <string name="tab_profile">Tài khoản</string>
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="tab_my_rooms">Phòng của tôi</string>
+    <string name="tab_appointments">Lịch hẹn</string>
+    <string name="tab_chats">Tin nhắn</string>
+    <string name="tab_pending">Chờ duyệt</string>
+    <string name="tab_reports">Báo cáo</string>
+    <string name="tab_users">Người dùng</string>
+
+    <!-- Room -->
+    <string name="price_per_month">%1$s/tháng</string>
+    <string name="distance_km">Cách trường %1$.1f km</string>
+    <string name="area_m2">%1$d m²</string>
+    <string name="save">Lưu</string>
+    <string name="saved">Đã lưu</string>
+    <string name="chat_landlord">Chat chủ trọ</string>
+    <string name="call_landlord">Gọi điện</string>
+    <string name="book_viewing">Đặt lịch xem phòng</string>
+    <string name="report_room">Báo cáo phòng</string>
+    <string name="add_room">Thêm phòng</string>
+    <string name="edit_room">Sửa phòng</string>
+    <string name="status_available">Còn phòng</string>
+    <string name="status_full">Hết phòng</string>
+    <string name="status_pending">Chờ duyệt</string>
+    <string name="approve">Duyệt</string>
+    <string name="reject">Từ chối</string>
+
+    <!-- Chat -->
+    <string name="type_message">Nhập tin nhắn…</string>
+    <string name="send">Gửi</string>
+
+    <!-- Common -->
+    <string name="cancel">Hủy</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="ok">OK</string>
+    <string name="loading">Đang tải…</string>
+    <string name="empty_list">Chưa có dữ liệu</string>
+    <string name="error_generic">Có lỗi xảy ra. Vui lòng thử lại.</string>
+</resources>
