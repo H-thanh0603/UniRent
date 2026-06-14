@@ -42,6 +42,17 @@
         </HorizontalScrollView>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_ai_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/primary"
+        android:textSize="13sp"
+        android:visibility="gone"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_results"
         android:layout_width="match_parent" android:layout_height="0dp"

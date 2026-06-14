@@ -64,4 +64,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
             .replace(R.id.container, f).commit();
     }
+
+    public void switchToSearch() {
+        bottomNav.setSelectedItemId(R.id.nav_search);
+    }
 }

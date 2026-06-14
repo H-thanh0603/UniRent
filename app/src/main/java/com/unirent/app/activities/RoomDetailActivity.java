@@ -75,11 +75,14 @@ public class RoomDetailActivity extends AppCompatActivity {
             }
         }
 
-        // AI risk warning
+        // AI risk analysis (async, gọi API thật)
         TextView tvRisk = findViewById(R.id.tv_risk);
-        String warn = AiHelper.riskWarning(room);
-        if (warn != null) { tvRisk.setText(warn); tvRisk.setVisibility(View.VISIBLE); }
-        else tvRisk.setVisibility(View.GONE);
+        tvRisk.setText("⏳ AI đang phân tích...");
+        tvRisk.setVisibility(View.VISIBLE);
+        AiHelper.analyzeRisk(room, risk -> {
+            tvRisk.setText(risk);
+            tvRisk.setVisibility(View.VISIBLE);
+        });
 
         // Favorite
         ImageButton btnFav = findViewById(R.id.btn_favorite);
