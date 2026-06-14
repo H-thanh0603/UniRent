@@ -13,6 +13,7 @@ import com.google.android.flexbox.FlexboxLayout;
 import com.unirent.app.R;
 import com.unirent.app.database.AppDatabase;
 import com.unirent.app.models.*;
+import com.unirent.app.ai.AiHelper;
 import com.unirent.app.utils.*;
 
 import java.text.NumberFormat;
