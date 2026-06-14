@@ -17,9 +17,10 @@ import com.unirent.app.models.*;
         Message.class,
         Conversation.class,
         Review.class,
-        Report.class
+        Report.class,
+        Roommate.class
     },
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(Converters.class)
@@ -33,6 +34,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract MessageDao messageDao();
     public abstract ReviewDao reviewDao();
     public abstract ReportDao reportDao();
+    public abstract RoommateDao roommateDao();
 
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {

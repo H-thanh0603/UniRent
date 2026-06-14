@@ -134,4 +134,23 @@ public class AiHelper {
         sb.append("→ Ưu tiên ngân sách: phòng 1. Cần rộng: phòng 2. Trải nghiệm: phòng 3.");
         return sb.toString();
     }
+
+    // ─── AI Price Prediction ───
+
+    public interface PriceCallback { void onResult(String prediction); }
+    public static void predictPrice(int area, String location, List<String> amenities, PriceCallback cb) {
+        String prompt = String.format(Locale.US,
+            "Dự đoán giá thuê phòng trọ hợp lý cho sinh viên (VNĐ/tháng): diện tích %dm², khu vực \"%s\", tiện ích: %s. "
+            + "Chỉ trả lời: \"Khoảng X - Y đồng/tháng\" và 1 câu giải thích ngắn.",
+            area, location != null ? location : "gần trường đại học",
+            amenities != null ? String.join(", ", amenities) : "cơ bản");
+
+        ApiClient.chat("Bạn là chuyên gia bất động sản cho thuê.", prompt, new ApiClient.Callback() {
+            public void onSuccess(String r) { cb.onResult("🤖 " + r); }
+            public void onError(String e) {
+                long est = area * 80000L;
+                cb.onResult(String.format(Locale.US, "💰 Ước tính: %,d - %,dđ/tháng (dựa trên diện tích %dm²)", est, est + 1000000, area));
+            }
+        });
+    }
 }

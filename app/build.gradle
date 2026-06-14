@@ -48,6 +48,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
     // Charts
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-    // Flexbox for amenity chips
+    // Flexbox
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    // Lottie animations
+    implementation 'com.airbnb.android:lottie:6.3.0'
 }

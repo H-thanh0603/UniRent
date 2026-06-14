@@ -1,32 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#1565C0</color>
-    <color name="primary_dark">#0D47A1</color>
-    <color name="primary_light">#BBDEFB</color>
-    <color name="accent">#00897B</color>
-    <color name="accent_dark">#00695C</color>
-    <color name="background">#F5F7FA</color>
-    <color name="surface">#FFFFFF</color>
-    <color name="text_primary">#1A1A1A</color>
-    <color name="text_secondary">#6B7280</color>
+    <!-- Material You palette -->
+    <color name="primary">#6750A4</color>
+    <color name="primary_dark">#4F378B</color>
+    <color name="primary_light">#EADDFF</color>
+    <color name="on_primary">#FFFFFF</color>
+
+    <color name="secondary">#625B71</color>
+    <color name="secondary_container">#E8DEF8</color>
+    <color name="on_secondary">#FFFFFF</color>
+
+    <color name="tertiary">#7D5260</color>
+    <color name="tertiary_container">#FFD8E4</color>
+
+    <color name="accent">#009688</color>
+    <color name="accent_dark">#00796B</color>
+
+    <!-- Surfaces -->
+    <color name="background">#FFFBFE</color>
+    <color name="surface">#FFFBFE</color>
+    <color name="surface_variant">#E7E0EC</color>
+    <color name="surface_tint">#6750A4</color>
+
+    <!-- Glass effect: semi-transparent surfaces -->
+    <color name="glass_surface">#F2FFFBFE</color>
+    <color name="glass_card">#E6FFFFFF</color>
+    <color name="glass_border">#1AFFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1C1B1F</color>
+    <color name="text_secondary">#49454F</color>
     <color name="text_hint">#9CA3AF</color>
     <color name="text_on_primary">#FFFFFF</color>
-    <color name="divider">#E5E7EB</color>
-    <color name="error">#E53935</color>
+
+    <!-- Status colors -->
+    <color name="error">#B3261E</color>
+    <color name="error_container">#F9DEDC</color>
     <color name="success">#43A047</color>
-    <color name="warning">#FB8C00</color>
+    <color name="success_container">#C8E6C9</color>
+    <color name="warning">#F57C00</color>
+    <color name="warning_container">#FFE0B2</color>
+
+    <!-- Icons & accents -->
+    <color name="divider">#E5E7EB</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="card_shadow">#1A000000</color>
     <color name="rating_star">#FFC107</color>
+    <color name="icon_tint">#625B71</color>
+
+    <!-- Badges -->
     <color name="badge_red">#FFEBEE</color>
-    <color name="badge_red_text">#C62828</color>
+    <color name="badge_red_text">#B71C1C</color>
     <color name="badge_green">#E8F5E9</color>
-    <color name="badge_green_text">#2E7D32</color>
-    <color name="badge_blue">#E3F2FD</color>
-    <color name="badge_blue_text">#1565C0</color>
-    <color name="toolbar">#1565C0</color>
-    <color name="icon_tint">#6B7280</color>
-    <color name="chip_bg">#E3F2FD</color>
-    <color name="chip_text">#1565C0</color>
+    <color name="badge_green_text">#1B5E20</color>
+    <color name="badge_blue">#E8DEF8</color>
+    <color name="badge_blue_text">#4F378B</color>
+
+    <!-- Chips -->
+    <color name="chip_bg">#EADDFF</color>
+    <color name="chip_text">#4F378B</color>
+
+    <!-- Gradient colors -->
+    <color name="gradient_start">#6750A4</color>
+    <color name="gradient_end">#7D5260</color>
+    <color name="splash_bg">#6750A4</color>
 </resources>
