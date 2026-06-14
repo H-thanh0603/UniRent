@@ -44,14 +44,14 @@
 
     <!-- Price - Large Bold Primary -->
     <style name="TextPrice" parent="">
-        <item name="android:textColor">@color/primary</item>
+        <item name="android:textColor">@color/brand</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Overline / Label -->
     <style name="TextLabel" parent="">
-        <item name="android:textColor">@color/primary</item>
+        <item name="android:textColor">@color/brand</item>
         <item name="android:textSize">11sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">0.1</item>

@@ -36,7 +36,7 @@
             android:layout_marginTop="16dp" android:padding="12dp"
             android:background="@drawable/bg_chip_blue"
             android:gravity="center"
-            android:textColor="@color/badge_blue_text"
+            android:textColor="@color/badge_brand_text"
             android:textStyle="bold"/>
 
         <TextView style="@style/Heading.Small"

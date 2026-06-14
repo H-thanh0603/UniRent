@@ -24,14 +24,14 @@
                 android:paddingStart="10dp" android:paddingEnd="10dp"
                 android:paddingTop="4dp" android:paddingBottom="4dp"
                 android:background="@drawable/bg_chip_blue"
-                android:textColor="@color/badge_blue_text"/>
+                android:textColor="@color/badge_brand_text"/>
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:textColor="@color/primary"
+            android:textColor="@color/brand"
             android:textStyle="bold"/>
 
         <TextView

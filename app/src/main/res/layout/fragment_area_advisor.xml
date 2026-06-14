@@ -154,7 +154,7 @@
             android:indeterminate="true"
             android:visibility="gone"
             android:layout_marginTop="8dp"
-            android:indeterminateTint="@color/primary"/>
+            android:indeterminateTint="@color/brand"/>
 
         <!-- Result -->
         <androidx.cardview.widget.CardView

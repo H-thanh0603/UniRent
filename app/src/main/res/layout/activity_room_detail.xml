@@ -73,7 +73,7 @@
                         android:layout_marginTop="6dp"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:textColor="@color/primary"/>
+                        android:textColor="@color/brand"/>
 
                     <TextView
                         android:id="@+id/tv_address"
@@ -129,8 +129,8 @@
                     <TextView android:id="@+id/tv_travel"
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:layout_marginTop="12dp" android:padding="12dp"
-                        android:background="@color/primary_light"
-                        android:textColor="@color/primary_dark"
+                        android:background="@color/brand_light"
+                        android:textColor="@color/brand_dark"
                         android:textSize="13sp"/>
 
                     <TextView android:id="@+id/tv_risk"

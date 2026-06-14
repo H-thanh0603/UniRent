@@ -58,7 +58,7 @@
         android:padding="8dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textColor="@color/primary"
+        android:textColor="@color/brand"
         android:textSize="13sp"
         android:visibility="visible"/>
 
@@ -69,7 +69,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:indeterminate="true"
         android:visibility="gone"
-        android:indeterminateTint="@color/primary"/>
+        android:indeterminateTint="@color/brand"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_results"

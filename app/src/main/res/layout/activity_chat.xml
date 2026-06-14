@@ -71,7 +71,7 @@
             android:layout_marginStart="8dp"
             android:background="@drawable/bg_chip_blue"
             android:src="@drawable/ic_send"
-            app:tint="@color/primary"/>
+            app:tint="@color/brand"/>
     </LinearLayout>
 
 </LinearLayout>

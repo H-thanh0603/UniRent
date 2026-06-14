@@ -45,24 +45,6 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.VH> {
             h.status.setBackgroundResource(avail ? R.drawable.bg_chip_green : R.drawable.bg_chip_red);
             h.status.setTextColor(h.itemView.getContext().getResources().getColor(avail ? R.color.badge_green_text : R.color.badge_red_text));
         }
-        // Amenities chips
-        if (h.llAmenities != null && r.amenities != null) {
-            h.llAmenities.removeAllViews();
-            int max = Math.min(r.amenities.size(), 3);
-            for (int i = 0; i < max; i++) {
-                TextView chip = new TextView(h.itemView.getContext());
-                chip.setText(r.amenities.get(i));
-                chip.setTextColor(h.itemView.getContext().getResources().getColor(R.color.chip_text));
-                chip.setBackgroundResource(R.drawable.bg_pill);
-                chip.setTextSize(11);
-                chip.setPadding(10, 3, 10, 3);
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(0, 0, 6, 0);
-                chip.setLayoutParams(lp);
-                h.llAmenities.addView(chip);
-            }
-        }
         h.itemView.setOnClickListener(v -> {
             Context c = v.getContext();
             Intent i = new Intent(c, RoomDetailActivity.class);
@@ -91,7 +73,6 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.VH> {
             distance = v.findViewById(R.id.tv_distance);
             rating = v.findViewById(R.id.tv_rating);
             status = v.findViewById(R.id.tv_status);
-            llAmenities = v.findViewById(R.id.ll_amenities);
         }
     }
 }

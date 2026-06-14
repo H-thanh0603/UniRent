@@ -76,7 +76,7 @@ public class CompareActivity extends AppCompatActivity {
         tv.setText(text);
         tv.setPadding(20, 16, 20, 16);
         if (bold || header) tv.setTypeface(null, android.graphics.Typeface.BOLD);
-        if (header) tv.setBackgroundColor(getResources().getColor(R.color.primary_light));
+        if (header) tv.setBackgroundColor(getResources().getColor(R.color.brand_light));
         return tv;
     }
 }

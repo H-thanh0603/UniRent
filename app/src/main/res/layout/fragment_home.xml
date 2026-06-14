@@ -20,7 +20,7 @@
             android:paddingEnd="@dimen/page_horizontal"
             android:paddingTop="@dimen/spacing_xl"
             android:paddingBottom="@dimen/spacing_lg"
-            android:background="@color/primary">
+            android:background="@color/brand">
 
             <TextView
                 android:id="@+id/tv_hello"
@@ -74,7 +74,7 @@
                         android:layout_height="40dp"
                         android:padding="8dp"
                         android:src="@drawable/ic_filter"
-                        app:tint="@color/primary"/>
+                        app:tint="@color/brand"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -172,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Xem tất cả"
-                android:textColor="@color/primary"
+                android:textColor="@color/brand"
                 android:textSize="13sp"/>
         </LinearLayout>
 
