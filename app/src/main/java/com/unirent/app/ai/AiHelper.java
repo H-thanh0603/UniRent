@@ -2,9 +2,8 @@ package com.unirent.app.ai;
 
 import android.util.Log;
 import com.unirent.app.models.Room;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import com.unirent.app.utils.TravelTime;
+import java.util.*;
 
 /**
  * AI helper — gọi DeepSeek API cho các tác vụ thông minh.
@@ -151,6 +150,92 @@ public class AiHelper {
                 long est = area * 80000L;
                 cb.onResult(String.format(Locale.US, "💰 Ước tính: %,d - %,dđ/tháng (dựa trên diện tích %dm²)", est, est + 1000000, area));
             }
+        });
+    }
+
+    // ─── AI Agent: tự lọc + chấm điểm ───
+
+    public interface AgentCallback { void onResult(java.util.List<Room> scored); }
+
+    /** AI Agent: nhận yêu cầu tự nhiên → lọc + chấm điểm phòng */
+    public static void agentFilter(String userRequest, java.util.List<Room> allRooms, AgentCallback cb) {
+        String prompt = String.format(Locale.US,
+            "Người dùng yêu cầu: \"%s\". Có %d phòng trọ. Hãy chọn tối đa 5 phòng phù hợp nhất, "
+            + "chấm điểm từ 0-100 dựa trên: giá, diện tích, khoảng cách, tiện ích. "
+            + "Trả lời ĐÚNG format JSON: {\"results\":[{\"roomId\":\"...\",\"score\":85,\"reason\":\"...\"}]}. "
+            + "Dữ liệu phòng:\n%s",
+            userRequest, allRooms.size(), roomsToJson(allRooms));
+
+        ApiClient.chat("Bạn là AI agent lọc phòng trọ. Chỉ trả lời JSON.", prompt, new ApiClient.Callback() {
+            public void onSuccess(String json) {
+                java.util.List<Room> scored = parseAgentResult(json, allRooms);
+                cb.onResult(scored);
+            }
+            public void onError(String e) {
+                cb.onResult(new java.util.ArrayList<>());
+            }
+        });
+    }
+
+    private static String roomsToJson(java.util.List<Room> rooms) {
+        StringBuilder sb = new StringBuilder("[");
+        int max = Math.min(rooms.size(), 20);
+        for (int i = 0; i < max; i++) {
+            Room r = rooms.get(i);
+            if (i > 0) sb.append(",");
+            sb.append(String.format(Locale.US,
+                "{\"roomId\":\"%s\",\"title\":\"%s\",\"price\":%d,\"area\":%d,\"distance\":%.1f,\"school\":\"%s\",\"rating\":%.1f,\"amenities\":[%s]}",
+                r.roomId, esc(r.title), r.price, r.area, r.distanceToSchool,
+                r.schoolName != null ? esc(r.schoolName) : "",
+                r.ratingAverage,
+                r.amenities != null ? "\"" + String.join("\",\"", r.amenities) + "\"" : ""));
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    private static String esc(String s) {
+        if (s == null) return "";
+        return s.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n");
+    }
+
+    private static java.util.List<Room> parseAgentResult(String json, java.util.List<Room> all) {
+        java.util.List<Room> result = new java.util.ArrayList<>();
+        java.util.Map<String, Room> map = new java.util.HashMap<>();
+        for (Room r : all) map.put(r.roomId, r);
+
+        try {
+            int idx = 0;
+            while ((idx = json.indexOf("\"roomId\":\"", idx)) >= 0) {
+                idx += 10;
+                int end = json.indexOf("\"", idx);
+                if (end < 0) break;
+                String rid = json.substring(idx, end);
+                Room r = map.get(rid);
+                if (r != null) result.add(r);
+                idx = end;
+            }
+        } catch (Exception e) { /* fallback */ }
+
+        // Fallback: nếu không parse được → trả về top rooms theo giá
+        if (result.isEmpty()) {
+            java.util.List<Room> sorted = new java.util.ArrayList<>(all);
+            java.util.Collections.sort(sorted, (a, b) -> Long.compare(a.price, b.price));
+            int n = Math.min(5, sorted.size());
+            for (int i = 0; i < n; i++) result.add(sorted.get(i));
+        }
+        return result;
+    }
+
+    /** AI Agent gợi ý khu vực nên ở dựa trên trường */
+    public interface AreaCallback { void onResult(String suggestion); }
+    public static void suggestArea(String schoolName, AreaCallback cb) {
+        String prompt = "Sinh viên học tại \"" + schoolName + "\". "
+            + "Hãy gợi ý 2-3 khu vực/quận nên tìm trọ, kèm lý do ngắn gọn. "
+            + "Trả lời ngắn gọn 2-3 dòng tiếng Việt.";
+        ApiClient.chat("Bạn là chuyên gia tư vấn nhà ở sinh viên.", prompt, new ApiClient.Callback() {
+            public void onSuccess(String r) { cb.onResult(r); }
+            public void onError(String e) { cb.onResult(TravelTime.getBestArea(schoolName)); }
         });
     }
 }

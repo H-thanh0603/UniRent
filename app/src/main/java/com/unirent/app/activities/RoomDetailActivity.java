@@ -14,8 +14,8 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.unirent.app.R;
 import com.unirent.app.database.AppDatabase;
 import com.unirent.app.models.*;
-import com.unirent.app.ai.AiHelper;
 import com.unirent.app.utils.*;
+import com.unirent.app.ai.AiHelper;
 
 import java.text.NumberFormat;
 import java.util.*;
@@ -57,6 +57,14 @@ public class RoomDetailActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.tv_electric)).setText(FormatUtils.money(room.electricFee) + "đ/kWh");
         ((TextView)findViewById(R.id.tv_water)).setText(FormatUtils.money(room.waterFee) + "đ/người");
         ((TextView)findViewById(R.id.tv_rules)).setText(room.rules);
+
+        // Travel time
+        TravelTime.TimeEstimate tt = TravelTime.calculate(room.distanceToSchool);
+        ((TextView)findViewById(R.id.tv_travel)).setText(tt.toShort());
+
+        // Total cost
+        CostCalculator.CostBreakdown cost = CostCalculator.calculate(room, room.distanceToSchool);
+        ((TextView)findViewById(R.id.tv_cost)).setText(cost.toSummary());
 
         FlexboxLayout box = findViewById(R.id.fb_amenities);
         box.removeAllViews();
