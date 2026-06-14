@@ -74,4 +74,8 @@ public class MainActivity extends AppCompatActivity {
         SearchFragment.setPendingArea(area);
         bottomNav.setSelectedItemId(R.id.nav_search);
     }
+
+    public void switchToArea() {
+        bottomNav.setSelectedItemId(R.id.nav_area);
+    }
 }

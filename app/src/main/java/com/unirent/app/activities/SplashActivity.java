@@ -24,7 +24,9 @@ public class SplashActivity extends AppCompatActivity {
                 if (sm.isLoggedIn() && sm.getCurrentUser() != null) {
                     i = new Intent(this, MainActivity.class);
                 } else {
-                    i = new Intent(this, LoginActivity.class);
+                    // Check onboarding
+                    boolean onboarded = getSharedPreferences("unirent", MODE_PRIVATE).getBoolean("onboarded", false);
+                    i = new Intent(this, onboarded ? LoginActivity.class : OnboardingActivity.class);
                 }
                 startActivity(i);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);

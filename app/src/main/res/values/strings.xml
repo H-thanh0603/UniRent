@@ -3,6 +3,14 @@
     <string name="app_name">UniRent</string>
     <string name="app_tagline">Tìm phòng trọ thông minh cho sinh viên</string>
 
+    <!-- Onboarding -->
+    <string name="onboard_title_1">Tìm trọ dễ dàng</string>
+    <string name="onboard_desc_1">Không cần lùng sục hàng trăm tin. AI của UniRent giúp bạn tìm phòng phù hợp chỉ trong vài giây.</string>
+    <string name="onboard_title_2">Chi phí minh bạch</string>
+    <string name="onboard_desc_2">Không chỉ tiền phòng — UniRent tính toán tổng chi phí thật mỗi tháng: điện, nước, wifi, di chuyển...</string>
+    <string name="onboard_title_3">An toàn &amp; thông minh</string>
+    <string name="onboard_desc_3">AI phân tích rủi ro, gợi ý khu vực phù hợp, và bạn có thể chat trực tiếp để được tư vấn ngay.</string>
+
     <!-- Auth -->
     <string name="login">Đăng nhập</string>
     <string name="register">Đăng ký</string>

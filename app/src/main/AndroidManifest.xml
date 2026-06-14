@@ -37,5 +37,6 @@
         <activity android:name=".activities.AppointmentActivity" android:exported="false"/>
         <activity android:name=".activities.AdminActivity" android:exported="false"/>
         <activity android:name=".activities.CompareActivity" android:exported="false"/>
+        <activity android:name=".activities.OnboardingActivity" android:exported="false"/>
     </application>
 </manifest>
