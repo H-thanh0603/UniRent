@@ -12,18 +12,26 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle s) {
         super.onCreate(s);
-        setContentView(R.layout.activity_splash);
+        try {
+            setContentView(R.layout.activity_splash);
+        } catch (Exception e) {
+            // Fallback: skip splash, go directly to target
+        }
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            SessionManager sm = new SessionManager(this);
-            Intent i;
-            if (sm.isLoggedIn() && sm.getCurrentUser() != null) {
-                i = new Intent(this, MainActivity.class);
-            } else {
-                i = new Intent(this, LoginActivity.class);
+            try {
+                SessionManager sm = new SessionManager(this);
+                Intent i;
+                if (sm.isLoggedIn() && sm.getCurrentUser() != null) {
+                    i = new Intent(this, MainActivity.class);
+                } else {
+                    i = new Intent(this, LoginActivity.class);
+                }
+                startActivity(i);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            } catch (Exception e) {
+                startActivity(new Intent(this, LoginActivity.class));
             }
-            startActivity(i);
             finish();
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        }, 2000);
+        }, 1500);
     }
 }

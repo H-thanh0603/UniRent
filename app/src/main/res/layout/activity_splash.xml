@@ -12,14 +12,12 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <!-- App icon -->
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/ic_home"
             app:tint="@color/white"/>
 
-        <!-- App name -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,15 +36,11 @@
             android:textSize="14sp"
             android:layout_marginTop="4dp"/>
 
-        <!-- Lottie loading dots -->
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottie_loading"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+        <ProgressBar
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginTop="32dp"
-            app:lottie_rawRes="@raw/loading_dots"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"/>
+            android:indeterminateTint="@color/white"/>
     </LinearLayout>
 
     <TextView
