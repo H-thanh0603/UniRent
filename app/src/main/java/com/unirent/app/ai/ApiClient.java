@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
  */
 public class ApiClient {
     private static final String API_URL = "https://api.ai-box.vn/v1/chat/completions";
-    private static final String API_KEY = "FILL_ME";
+    private static final String API_KEY = "sk-QVe6LUWgDJrP22guak7Ay69MCWpk23sTL6ApGEh1zrZqKj8v";
     private static final String MODEL = "deepseek-v4-pro";
     private static final Executor executor = Executors.newSingleThreadExecutor();
     private static final Handler mainHandler = new Handler(Looper.getMainLooper());
