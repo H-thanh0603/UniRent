@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             if (id == R.id.nav_home) return new HomeFragment();
             if (id == R.id.nav_search) return new SearchFragment();
             if (id == R.id.nav_roommate) return new RoommateFragment();
-            if (id == R.id.nav_heatmap) return new HeatmapFragment();
             if (id == R.id.nav_favorite) return new FavoriteFragment();
             if (id == R.id.nav_profile) return new ProfileFragment();
         } else if (User.ROLE_LANDLORD.equals(role)) {
