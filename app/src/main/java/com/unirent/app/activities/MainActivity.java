@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         if (User.ROLE_STUDENT.equals(role)) {
             if (id == R.id.nav_home) return new HomeFragment();
             if (id == R.id.nav_search) return new SearchFragment();
+            if (id == R.id.nav_area) return new AreaAdvisorFragment();
             if (id == R.id.nav_roommate) return new RoommateFragment();
-            if (id == R.id.nav_favorite) return new FavoriteFragment();
             if (id == R.id.nav_profile) return new ProfileFragment();
         } else if (User.ROLE_LANDLORD.equals(role)) {
             if (id == R.id.nav_dashboard) return new LandlordDashboardFragment();
@@ -67,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchToSearch() {
+        bottomNav.setSelectedItemId(R.id.nav_search);
+    }
+
+    public void switchToSearchWithArea(String area) {
+        SearchFragment.setPendingArea(area);
         bottomNav.setSelectedItemId(R.id.nav_search);
     }
 }

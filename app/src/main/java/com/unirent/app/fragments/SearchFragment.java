@@ -16,6 +16,9 @@ import com.unirent.app.models.Room;
 import java.util.*;
 
 public class SearchFragment extends Fragment {
+    private static String pendingArea = null;
+    public static void setPendingArea(String area) { pendingArea = area; }
+
     private RoomAdapter adapter;
     private List<Room> all;
     private long maxPrice = Long.MAX_VALUE;
@@ -40,6 +43,13 @@ public class SearchFragment extends Fragment {
 
         applyFilter("");
 
+        // Nếu có pending area từ AreaAdvisor → auto search
+        if (pendingArea != null) {
+            etQ.setText(pendingArea);
+            aiSearch("Phòng trọ khu vực " + pendingArea);
+            pendingArea = null;
+        }
+
         // 🤖 AI tìm giúp
         root.findViewById(R.id.btn_ai_filter).setOnClickListener(v -> {
             String q = etQ.getText().toString().trim();
@@ -61,14 +71,6 @@ public class SearchFragment extends Fragment {
         bindChip(root, R.id.chip_near_2km, () -> { maxDist = 2.0; maxPrice = Long.MAX_VALUE; applyFilter(etQ.getText().toString()); });
         bindChip(root, R.id.chip_near_5km, () -> { maxDist = 5.0; maxPrice = Long.MAX_VALUE; applyFilter(etQ.getText().toString()); });
         bindChip(root, R.id.chip_clear,    () -> { maxPrice = Long.MAX_VALUE; maxDist = Double.MAX_VALUE; etQ.setText(""); applyFilter(""); });
-
-        // AI gợi ý khu vực (chạy 1 lần)
-        AiHelper.suggestArea("UTE", area -> {
-            if (tvAiHint != null && area != null && !area.isEmpty()) {
-                tvAiHint.setText("💡 " + area);
-                tvAiHint.setVisibility(View.VISIBLE);
-            }
-        });
 
         return root;
     }
