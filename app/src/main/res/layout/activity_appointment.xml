@@ -81,7 +81,9 @@
                 android:id="@+id/et_note"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:minLines="3" android:gravity="top"
-                android:inputType="textMultiLine"/>
+                android:inputType="textMultiLine"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton

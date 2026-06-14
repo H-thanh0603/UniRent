@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.flexbox.FlexboxLayout;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.unirent.app.R;
 import com.unirent.app.database.AppDatabase;
 import com.unirent.app.models.*;
@@ -30,6 +31,8 @@ public class RoomDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle s) {
         super.onCreate(s);
         setContentView(R.layout.activity_room_detail);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(v -> finish());
         db = AppDatabase.getInstance(this);
         user = new SessionManager(this).getCurrentUser();
         String id = getIntent().getStringExtra(EXTRA_ROOM_ID);
@@ -61,7 +64,7 @@ public class RoomDetailActivity extends AppCompatActivity {
             for (String a : room.amenities) {
                 TextView chip = new TextView(this);
                 chip.setText(a);
-                chip.setBackgroundResource(R.drawable.bg_chip_blue);
+                chip.setBackgroundResource(R.drawable.bg_chip);
                 chip.setTextColor(getResources().getColor(R.color.badge_blue_text));
                 chip.setPadding(24, 12, 24, 12);
                 FlexboxLayout.LayoutParams lp = new FlexboxLayout.LayoutParams(
@@ -84,7 +87,6 @@ public class RoomDetailActivity extends AppCompatActivity {
         btnFav.setImageResource(isFavorite ? R.drawable.ic_favorite : R.drawable.ic_favorite_border);
         btnFav.setOnClickListener(v -> toggleFav(btnFav));
 
-        findViewById(R.id.btn_back).setOnClickListener(v -> finish());
         findViewById(R.id.btn_chat).setOnClickListener(v -> openChat());
         findViewById(R.id.btn_call).setOnClickListener(v -> {
             User l = db.userDao().getById(room.landlordId);
